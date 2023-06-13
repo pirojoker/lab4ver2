@@ -74,7 +74,15 @@ class Polynomial:
     def coef(self):
         return self._coef_
 
-    
+    def value(self, point):
+        # print("---->>> ", self._coef_)
+        # sum = self._coef_[0] * point + self._coef_[1]
+        # if (len(self._coef_) > 2):
+        #     for i in range(2, len(self._coef_)):
+        #         sum += sum * point + self._coef_[i]
+
+        # return (sum)
+        return sum([el * point ** i for i, el in enumerate(self._coef_[::-1])])
 
     def sum(self, other):
         other_coef = list(getattr(other, '_coef_'))
